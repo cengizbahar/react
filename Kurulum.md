@@ -23,3 +23,11 @@ npm init react-app my-app
 yarn create react-app my-app
 
 ```
+
+# CHROME EKLENTİLERİ
+## React Dev Tools
+## Redux Dev Tools
+
+# VİSUAL STUDİO CODE EKLENTİLER
+## ES7 React / Redux / GraphQL / React Native / Js Snippet
+## Live Server
