@@ -1,4 +1,7 @@
 ## Src Klasörünün altına ' Components ' adında bir klasör oluşturuyoruz. İçerisine ilk componentimizi ekliyoruz. ' Users.js '
+## App.js de Aşşağıdaki gibi Güncelliyoruz.
+
+## Yeni Component
 
 ```html
 
@@ -19,4 +22,25 @@ import React, { Component } from 'react'
 
 export default Users;
 
+```
+
+## App JS
+
+```html
+
+import './App.css';
+import './components/Users';
+import Users from './components/Users';
+
+ class App extends Component {
+  render() {
+    return (
+      <div>
+        <Users />
+      </div>
+    )
+  }
+}
+
+export default App;
 ```
