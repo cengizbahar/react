@@ -1,14 +1,20 @@
 ```html
 
-# YENİ APP OLUŞTURMA
+import React, { Component } from 'react'
 
-# NPX
-npx create-react-app my-app
+ class Users extends Component {
+    render() {
+        return (
+            <div>
+                <form>
+                    <input type="text" /> 
+                    <button>Gönder</button>
+                </form>
+            </div>
+        )
+    }
+}
 
-# NPM
-npm init react-app my-app
-
-# Yarn
-yarn create react-app my-app
+export default Users;
 
 ```
