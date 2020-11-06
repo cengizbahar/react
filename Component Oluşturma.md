@@ -5,7 +5,7 @@
 
 ```html
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
  class Users extends Component {
     render() {
@@ -28,7 +28,7 @@ export default Users;
 
 ```html
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './App.css';
 import './components/Users';
 
