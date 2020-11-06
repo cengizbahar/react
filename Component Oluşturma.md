@@ -28,9 +28,10 @@ export default Users;
 
 ```html
 
+import React, { Component } from 'react'
 import './App.css';
 import './components/Users';
-import Users from './components/Users';
+
 
  class App extends Component {
   render() {
