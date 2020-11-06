@@ -1,4 +1,4 @@
-## Kurulum
+## Src Klasörünün altına ' Components ' adında bir klasör oluşturuyoruz. İçerisine ilk componentimizi ekliyoruz. ' Users.js '
 
 ```html
 
