@@ -1,12 +1,8 @@
-
-Src altına components klasörü oluşturarak Users.js adında ilk componentimizi oluşturuyoruz.
-
-
-
+## SRC klasörünün altına components adında bir klasör oluşturarak içine Users.js oluşturuyoruz.
 
 ```html
 
-  import React, { Component } from 'react'
+import React, { Component } from 'react'
 
  class Users extends Component {
     render() {
