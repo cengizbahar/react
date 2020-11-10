@@ -1,7 +1,7 @@
 ## Src Klasörünün altına ' Components ' adında bir klasör oluşturuyoruz. İçerisine ilk componentimizi ekliyoruz. ' Users.js '
 ## App.js de Aşşağıdaki gibi Güncelliyoruz.
 
-## Yeni Component
+##  Yeni Users Component
 
 ```html
 
