@@ -61,3 +61,45 @@ class Users extends Component {
 
 export default Users;
 ```
+
+# propTypes ve defaultProps Oluşturma
+
+```html
+import React, { Component } from 'react'
+
+class Users extends Component {
+    render() {
+        // Destructing 
+        const {name,department,salary} = this.props;
+        return (
+            <div>
+                <ul>
+                    <li>
+                        İsim : {name}
+                    </li>
+                    <li>
+                        Departman : {department}
+                    </li>
+                    <li>
+                        Maaş : {salary}
+                    </li>
+                </ul>
+            </div>
+        )
+    }
+}
+
+Users.defaultProps = {
+    name : "bilgi yok",
+    department : "bilgi yok",
+    salary : "bilgi yok"
+}
+
+Users.propTypes = {
+    name : PropTypes.string.isRequired,
+    department : PropTypes.string.isRequired,
+    salary : PropTypes.string.isRequired
+}
+
+export default Users;
+```
