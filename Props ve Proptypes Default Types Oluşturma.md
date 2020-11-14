@@ -66,7 +66,7 @@ export default Users;
 
 ```html
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 class Users extends Component {
     render() {
         // Destructing 
