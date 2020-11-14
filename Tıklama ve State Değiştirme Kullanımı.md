@@ -1,4 +1,5 @@
-''' HTML
+#  onClickEvent & SetState Kullanımı
+```html
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -53,4 +54,4 @@ class Users extends Component {
 
 export default Users;
 
-'''
+```
