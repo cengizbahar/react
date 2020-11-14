@@ -2,7 +2,7 @@
 ```html
 
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+
 
 
 class Users extends Component {
@@ -19,8 +19,7 @@ class Users extends Component {
        
     }
     render() {
-        // Destructing 
-        const { name, department, salary } = this.props;
+       
         // İsvisible
         const { isVisible } = this.state;
         return (
