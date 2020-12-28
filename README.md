@@ -1,13 +1,17 @@
 ## Swiper Js 
 ### npm i swiper
+
+
+```
 index.html
     <!-- Swiper -->
      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
      <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    
 
-```
 App.Js İmport
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
