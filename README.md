@@ -20,3 +20,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
       ...
 </Swiper>
 ```
+
+## Route Path
+### npm install react-router-dom
+
+```
+<a className="aasd" href="/footer">Footer</a>
+        
+<Route path="/navbar" exact component={Navbar}></Route>
+
+```
