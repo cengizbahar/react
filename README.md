@@ -1,3 +1,6 @@
+TypeScript Kurs
+https://kursbil.com/en-iyi-typescript-kurslari-online-egitimleri-top-6-2021/
+
 ## Swiper Js 
 ### npm i swiper
 
