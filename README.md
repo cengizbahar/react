@@ -48,12 +48,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 ### npm install redux react-redux
 
 
-// STORE -> GLOBALIZED STATE
-// ACTION -> ARTTIRMA
-// REDUCER -> NE DISPATCH EDİLİRSE ONU ÇALIŞTIRIR
-// REDUCER ACTIONA A GÖRE STORU MODIFY EDER
+### STORE -> GLOBALIZED STATE
+### ACTION -> ARTTIRMA
+### REDUCER -> NE DISPATCH EDİLİRSE ONU ÇALIŞTIRIR
+### REDUCER ACTIONA A GÖRE STORU MODIFY EDER
 
-// DISPATCH -> ACTIONU EXECUTE ETTİGİMİZ YANİ ÇALIŞTIRDIGIĞIMIZ YER DISPATCH 
+### DISPATCH -> ACTIONU EXECUTE ETTİGİMİZ YANİ ÇALIŞTIRDIGIĞIMIZ YER DISPATCH 
 
 
 ## İNDEX.JS
@@ -62,20 +62,18 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 
     const increment = () => {
-        return
-        {
+        return {
             type: 'INCREMENT'
         }
     }
      const decrement = () => {
-        return
-        {
+        return {
             type: 'DECREMENT'
         }
      }
      
      // reducer 
-     const counter={state=0,action} => 
+     const counter={state=0, action} => 
      {
         switch(action.type)
         {
@@ -89,7 +87,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
      let store=createStore(counter);
      
      // Display it on the screen
-     store.subcribe(()=>console.log(store.getState()));
+     store.subscribe(()=>console.log(store.getState()));
      
+     // DISPATCH
+     store.dispatch(increment()); +1
+     store.dispatch(decrement()); 0
+     store.dispatch(decrement()); -1
      
 ```
