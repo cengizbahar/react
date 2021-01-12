@@ -42,3 +42,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 <Route path="/navbar" exact component={Navbar}></Route>
 
 ```
+
+
+## Redux
+### npm install redux react-redux
+
+
+
