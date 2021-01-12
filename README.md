@@ -159,3 +159,5 @@ import { Swiper, SwiperSlide } from 'swiper/react';
     );
     export default allReducers;
 ```
+ 10dk dan devam et
+ 135 . ders
