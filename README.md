@@ -58,9 +58,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 ## İNDEX.JS
 ```
+    
+ 
+    
+    // İMPORT
     import {createStore} from 'redux';
-
-
+    import allReducers from '.reducers'; // direk tanıyor
+    
+    
+     const store=createStore(allReducers)
+    
+    // ACTION -> ARTTIRMA
     const increment = () => {
         return {
             type: 'INCREMENT'
@@ -94,4 +102,60 @@ import { Swiper, SwiperSlide } from 'swiper/react';
      store.dispatch(decrement()); 0
      store.dispatch(decrement()); -1
      
+```
+
+## Src nin Altına actions ve reducers adında 2 tane klasör ekle
+## reducers içerisine index.js ekle
+## reducers 'in icerisine counter.js
+## reducers 'in icerisine logedReducer.js
+
+# reducers / counter.js
+```
+     const counterReducer = {state = 0, action} => 
+     {
+        switch(action.type)
+        {
+            case 'INCREMENT':
+                return state + 1;
+            case 'DECREMENT':
+                return state - 1;
+             default :
+                return state
+        }
+     };
+     
+     export default counterReducer;
+```
+
+# reducers / logReducer.js
+```
+    const loggedReducer=(state=false,action) =>
+    {
+        switch(action.type) 
+        {
+            case 'SIGN_IN':
+                return !state
+            default: // girmediği durum
+                return state;
+        }
+    };
+    
+    export default loggedReducer;
+```
+
+# reducers / index.js
+```
+    import counterReducer from './counter';
+    import loggedReducer from './loggedReducer';
+    import {combineReducers} from 'redux';
+    
+    const allReducers=combineReducers(
+        {
+            counter : counterReducer,
+            isLogged : loggedReducer,
+                  
+            
+        }
+    );
+    export default allReducers;
 ```
