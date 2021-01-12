@@ -39,7 +39,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 ```
 <a className="aasd" href="/footer">Footer</a>
         
-<Route path="/navbar" exact component={Navbar}></Route>
+<Route exact path="/navbar" component={Navbar}></Route>
 
 ```
 
@@ -48,4 +48,48 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 ### npm install redux react-redux
 
 
+// STORE -> GLOBALIZED STATE
+// ACTION -> ARTTIRMA
+// REDUCER -> NE DISPATCH EDİLİRSE ONU ÇALIŞTIRIR
+// REDUCER ACTIONA A GÖRE STORU MODIFY EDER
 
+// DISPATCH -> ACTIONU EXECUTE ETTİGİMİZ YANİ ÇALIŞTIRDIGIĞIMIZ YER DISPATCH 
+
+
+## İNDEX.JS
+```
+    import {createStore} from 'redux';
+
+
+    const increment = () => {
+        return
+        {
+            type: 'INCREMENT'
+        }
+    }
+     const decrement = () => {
+        return
+        {
+            type: 'DECREMENT'
+        }
+     }
+     
+     // reducer 
+     const counter={state=0,action} => 
+     {
+        switch(action.type)
+        {
+            case 'INCREMENT':
+                return state + 1;
+            case 'DECREMENT':
+                return state - 1;
+        }
+     }
+     
+     let store=createStore(counter);
+     
+     // Display it on the screen
+     store.subcribe(()=>console.log(store.getState()));
+     
+     
+```
