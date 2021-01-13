@@ -46,6 +46,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 ## Redux
 ### npm install redux react-redux
+## redux devtools chrome
+
+## redux devtools extension code -> zalmoxisus
 
 
 ### STORE -> GLOBALIZED STATE
@@ -56,7 +59,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 ### DISPATCH -> ACTIONU EXECUTE ETTİGİMİZ YANİ ÇALIŞTIRDIGIĞIMIZ YER DISPATCH 
 
 
-## İNDEX.JS
+## İNDEX.JS linkleri yazdığımız yer
 ```
     
  
@@ -64,9 +67,22 @@ import { Swiper, SwiperSlide } from 'swiper/react';
     // İMPORT
     import {createStore} from 'redux';
     import allReducers from '.reducers'; // direk tanıyor
+    import {Provider} from 'react-redux';
+    
+        
+     const store=createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__());
+    
+        ReactDOM.render (
+            <Provider store={store}>
+                <App />
+            </Provider>,
+        )
+    
+
     
     
-     const store=createStore(allReducers)
+    
+    // alttakiler örnek silebilirsiniz
     
     // ACTION -> ARTTIRMA
     const increment = () => {
@@ -101,6 +117,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
      store.dispatch(increment()); +1
      store.dispatch(decrement()); 0
      store.dispatch(decrement()); -1
+     
+     
+     / alttakiler örnek silebilirsiniz
      
 ```
 
@@ -159,5 +178,40 @@ import { Swiper, SwiperSlide } from 'swiper/react';
     );
     export default allReducers;
 ```
- 10dk dan devam et
- 135 . ders
+## APP.JS
+import {useSelector,useDispatch} from 'react-redux';
+import {increment,decrement} from './actions';
+```
+
+function App() {
+
+   const counter=useSelector(state=>state.counter);
+   const dispatch=useDispatch();
+   return (
+        <div className="App">
+        <h1>Counter {counter} </h1>
+            <button onClick={()=>dispatch(increment())}>+</button>
+            <button onClick={()=>dispatch(decrement())}>-</button>
+        </div>
+    );
+}
+```
+
+## action folderin içine index.js açıyoruz
+```
+
+    export const increment = () => 
+    {
+        return {
+            type: 'INCREMENT'
+        };
+    };
+    
+     export const decrement = () => 
+    {
+        return {
+            type: 'DECREMENT'
+        };
+    };
+    
+```
