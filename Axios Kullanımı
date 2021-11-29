@@ -1,5 +1,5 @@
 
-```
+
 ## Axios Kullanımı
 ### npm install axios
 #### import Axios from 'axios';
@@ -9,6 +9,7 @@
 #### axios.get : Liste getirme
 #### axios.post
 
+```html
 export default class About extends Component
 { 
 
