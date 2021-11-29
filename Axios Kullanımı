@@ -1,0 +1,55 @@
+## Axios Kullanımı
+### npm install axios
+#### import Axios from 'axios';
+
+#### .then : Data geldiğinde
+#### .await : Data geldiğinde
+#### axios.get : Liste getirme
+#### axios.post
+
+```
+export default class About extends Component
+{ 
+
+  state = {
+    userList : [],
+   
+  }
+  componentDidMount()
+  {
+    this.getUserList();
+  }
+
+  getUserList = async () =>
+  {
+     Axios.get("https://jsonplaceholder.typicode.com/users").then( data => {
+
+     this.setState({userList : data.data});
+
+     });
+   // Axios.post("https://jsonplaceholder.typicode.com/users",{token : "asdasd"});
+  }
+
+
+ 
+
+  render()  
+  {
+    
+    const users = this.state.userList;
+
+    return(
+      <div>
+       <ul>
+       {
+        users.map( (value) => (
+          <li key={value.email}>{value.email}</li>
+       ))}
+       </ul>
+        </div>
+
+    );
+  }
+}
+
+```
