@@ -34,15 +34,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 </Swiper>
 ```
 
-## Route Path
-### npm install react-router-dom
 
-```
-<a className="aasd" href="/footer">Footer</a>
-        
-<Route exact path="/navbar" component={Navbar}></Route>
-
-```
 
 
 ## Redux
