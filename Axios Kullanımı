@@ -9,7 +9,7 @@
 #### axios.get : Liste getirme
 #### axios.post
 
-```html
+```
 export default class About extends Component
 { 
 
