@@ -1,40 +1,3 @@
-
-
-## Swiper Js 
-### npm i swiper
-
-
-```
-index.html
-    <!-- Swiper -->
-     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
-    
-
-App.Js İmport
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-<Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
-</Swiper>
-```
-
-
-
-
 ## Redux
 ### npm install redux react-redux
 ## redux devtools chrome
@@ -207,36 +170,3 @@ function App() {
     
 ```
 
-## Güncel Route Path Kullanımı = Menü oluşturma
-## npm instal react-router-dom
-## Exact : İlk açılmasını istediğiniz sayfayı belirtir.
-````
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-render()  
-  {
-   
-
-    return(
-    <div>
-      <div>
-      <Router>
-    
-        <Routes>
-          <Route  exact path="/" element={<Home/>}/>
-          <Route  path="/about" element={<About/>}/>
-          <Route  path="/form" element={<Form/>}/>
-          
-        </Routes>
-     
-      </Router>
-    </div>
-
-    </div>
-
-    );
-  }
-}
-
-export default App;
-````
