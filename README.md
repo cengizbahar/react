@@ -211,7 +211,7 @@ function App() {
 
 ## Güncel Route Path Kullanımı = Menü oluşturma
 ## npm instal react-router-dom
-
+## Exact : İlk açılmasını istediğiniz sayfayı belirtir.
 ````
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
