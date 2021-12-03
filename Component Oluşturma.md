@@ -39,7 +39,7 @@ import './App.css';
 import './components/Users';
 
 
- class App extends Component {
+ export default  class App extends Component {
   render() {
     return (
       <div>
@@ -49,5 +49,5 @@ import './components/Users';
   }
 }
 
-export default App;
+
 ```
