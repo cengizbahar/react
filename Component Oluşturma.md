@@ -5,22 +5,28 @@
 
 ```html
 
-import React, { Component } from 'react';
+import React,{Component} from 'react';
 
- class Users extends Component {
-    render() {
-        return (
-            <div>
-                <form>
-                    <input type="text" /> 
-                    <button>Gönder</button>
-                </form>
-            </div>
-        )
-    }
+export default class Users extends Component {
+  render()  
+  {
+    
+    const users = this.state.userList;
+
+    return(
+      <div>
+       <ul>
+       {
+        users.map( (value) => (
+          <li key={value.email}>{value.email}</li>
+       ))}
+       </ul>
+        </div>
+
+    );
+  }
+
 }
-
-export default Users;
 
 ```
 
