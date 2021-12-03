@@ -3,11 +3,13 @@
 ## Axios Kullanımı
 ### npm install axios
 #### import Axios from 'axios';
-
+2 Şekilde veri geldiğinde ne yapacağınızı söyleyebilirsiniz, Then ve await şeklinde istediğiniz örneği kullanabilirsiniz.
 #### .then : Data geldiğinde
 #### .await : Data geldiğinde
-#### axios.get : Liste getirme
-#### axios.post
+
+Veri çekme ve post etme işşemleri
+#### axios.get : Veri getirme
+#### axios.post : Veri gönderme
 
 ```
 export default class About extends Component
