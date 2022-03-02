@@ -1,172 +1,145 @@
-## Redux
-### npm install redux react-redux
-## redux devtools chrome
+## Callback Function
 
-## redux devtools extension code -> zalmoxisus
-
-
-### STORE -> GLOBALIZED STATE
-### ACTION -> ARTTIRMA
-### REDUCER -> NE DISPATCH EDİLİRSE ONU ÇALIŞTIRIR
-### REDUCER ACTIONA A GÖRE STORU MODIFY EDER
-
-### DISPATCH -> ACTIONU EXECUTE ETTİGİMİZ YANİ ÇALIŞTIRDIGIĞIMIZ YER DISPATCH 
-
-
-## İNDEX.JS linkleri yazdığımız yer
 ```
-    
- 
-    
-    // İMPORT
-    import {createStore} from 'redux';
-    import allReducers from '.reducers'; // direk tanıyor
-    import {Provider} from 'react-redux';
-    
-        
-     const store=createStore(allReducers,window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__());
-    
-        ReactDOM.render (
-            <Provider store={store}>
-                <App />
-            </Provider>,
-        )
-    
+    // 2 saniye sonra hello dünya yazar
+setTimeout(() => {
+    console.log('hello dünya');
+}, 2000);
 
-    
-    
-    
-    // alttakiler örnek silebilirsiniz
-    
-    // ACTION -> ARTTIRMA
-    const increment = () => {
-        return {
-            type: 'INCREMENT'
-        }
-    }
-     const decrement = () => {
-        return {
-            type: 'DECREMENT'
-        }
-     }
-     
-     // reducer 
-     const counter={state=0, action} => 
-     {
-        switch(action.type)
-        {
-            case 'INCREMENT':
-                return state + 1;
-            case 'DECREMENT':
-                return state - 1;
-        }
-     }
-     
-     let store=createStore(counter);
-     
-     // Display it on the screen
-     store.subscribe(()=>console.log(store.getState()));
-     
-     // DISPATCH
-     store.dispatch(increment()); +1
-     store.dispatch(decrement()); 0
-     store.dispatch(decrement()); -1
-     
-     
-     / alttakiler örnek silebilirsiniz
-     
-```
 
-## Src nin Altına actions ve reducers adında 2 tane klasör ekle
-## reducers içerisine index.js ekle
-## reducers 'in icerisine counter.js
-## reducers 'in icerisine logedReducer.js
+// Her periyetto çalışır durdurmazsanız sürekli çalışır.
+setInterval(() => {
+    console.log('Merhaba');
+});
 
-# reducers / counter.js
-```
-     const counterReducer = {state = 0, action} => 
-     {
-        switch(action.type)
-        {
-            case 'INCREMENT':
-                return state + 1;
-            case 'DECREMENT':
-                return state - 1;
-             default :
-                return state
-        }
-     };
-     
-     export default counterReducer;
-```
-
-# reducers / logReducer.js
-```
-    const loggedReducer=(state=false,action) =>
-    {
-        switch(action.type) 
-        {
-            case 'SIGN_IN':
-                return !state
-            default: // girmediği durum
-                return state;
-        }
-    };
-    
-    export default loggedReducer;
-```
-
-# reducers / index.js
-```
-    import counterReducer from './counter';
-    import loggedReducer from './loggedReducer';
-    import {combineReducers} from 'redux';
-    
-    const allReducers=combineReducers(
-        {
-            counter : counterReducer,
-            isLogged : loggedReducer,
-                  
-            
-        }
-    );
-    export default allReducers;
-```
-## APP.JS
-import {useSelector,useDispatch} from 'react-redux';
-import {increment,decrement} from './actions';
-```
-
-function App() {
-
-   const counter=useSelector(state=>state.counter);
-   const dispatch=useDispatch();
-   return (
-        <div className="App">
-        <h1>Counter {counter} </h1>
-            <button onClick={()=>dispatch(increment())}>+</button>
-            <button onClick={()=>dispatch(decrement())}>-</button>
-        </div>
-    );
+// Paremetre olarak çalıştırma
+const sayhello = (cb) => {
+    cb();
 }
+
+sayhello(() => {
+    console.log('hello')
+});
+
+// fetch işlemlerinde sıraya koyarak çagırma işlemi yapabiliriz,
+// dışarıdan ayrı ayrı çağırırsak sıralamayı js kendisi belirler, iç içe olarak düzgün çağırma işlemi yapabiliriz.
+npm i node - fetch
+
+import fetch from 'nonde-fetch'
+
+fetch("https://jsonplaceholder.typicode.com/users") {
+    .then((data) => data.json())
+        .then((users) => {
+            console.log("users Yuklendi", users);
+});
+
+// axios en iyi kullanılan
+
+async function getData() {
+        const users = await (
+            await fetch("https://jsonplaceholder.typicode.com/users")
+        ).json();
+
+        const post1 = await (
+            await fetch("https://jsonplaceholder.typicode.com/posts/1")
+        ).json();
+
+        console.log("users", users);
+        console.log("post1", post1);
+    }
+
+    getData();
+
+
+
+// axios npm i axios
+import axios from "axios";
+
+( async () => {
+    const {data: users} = await axios("https://jsonplaceholder.typicode.com/users");
+
+    console.log("users",users);
+})();
+
+
 ```
 
-## action folderin içine index.js açıyoruz
+## Promise 
+```
+// Promise konusu
+// eger 1 e eşitse resolve dönecek degiselse reject olacak
+// promise kullanımı bu şekilde
+
+
+const getComments = (number) => {
+    return new Promise((resolve, reject) => {
+      if (number === 1 ) {
+          resolve({text: "selam"});
+      }
+      reject ("bir problem oluştu!");
+    }); 
+};
+
+getComments(1)
+.then(() => console.log(data))
+.catch((e) => console.log(e));
+
+
+// try catch arasına alırsa hatayı loglayabiliriz.
+
+
 ```
 
-    export const increment = () => 
-    {
-        return {
-            type: 'INCREMENT'
-        };
-    };
-    
-     export const decrement = () => 
-    {
-        return {
-            type: 'DECREMENT'
-        };
-    };
-    
+## Array Function
 ```
+// array function 
+// push , map , find , filter , some, every //
 
+
+const users = [
+    { 
+    name: "cengiz",
+    age: 18,
+},
+{
+    name: "sedat",
+    age: 21,
+}
+];
+
+// Push ekleme
+users.push("ayşe")
+console.log(users)
+
+// map döngü
+users.map((item) => {
+    console.log(item.name);
+});
+
+// find
+const result = users.find((item) => item.name === "mehmet" && item.age > 20);
+console.log(users)
+
+// filter filtreledigimiz alanları getirir && ve 
+const filter = users.filter(({name, age}) => name === "mehmet" && age < 20 );
+console.log(filter)
+
+//some 1 şart sağlandıgında true döner
+const some = users.some((item) => item.name === cengiz);
+console.log(users)
+
+// every tüm şartlar uygunsa true döner
+
+const every = users.every((item) => item.age >20);
+console.log(every);
+
+
+
+
+// includes var mı yok mu diye kontrol ediyor 
+const meyveler = ["armut","elma","kiraz"];
+
+const inclued = meyveler.includes("portakal");
+console.log(inclued);
+```
+ 
