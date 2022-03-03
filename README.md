@@ -158,3 +158,54 @@ function app(){
 }
 
 ```
+## PROPS parametre gönderme
+```
+1. Yöntem Kullanım
+
+App Component
+import './App.css';
+import Header from './Header';
+import User from './User';
+
+function App() {
+  return (
+    <div>
+       <Header />
+      < User name = "Cengiz" surname = "Bahar" isLoggidIn = {true} />
+    </div>  
+   
+  );
+}
+
+export default App;
+
+User Component
+
+function User(props) {
+   
+  return (
+    <div>
+        <h1>{props.isLoggidIn ? `${props.name} ${props.surname} `: "Giriş yapmadınız."}</h1>
+    </div>
+  )
+}
+
+export default User;
+
+
+2. Seçenek app component aynı, app.js componentten obje gönderdiğimizi bildigimiz için bu şekildede kullanabiliriz.
+
+
+function User({isLoggidIn , name , surname}) {
+   
+  return (
+    <div>
+        <h1>{isLoggidIn ? `${name} ${surname} `: "Giriş yapmadınız."}</h1>
+    </div>
+  )
+}
+
+export default User;
+
+```
+
