@@ -158,7 +158,7 @@ function app(){
 }
 
 ```
-## PROPS parametre gönderme
+## PROPS parametre gönderme, istediğimiz kadar property ekleyebiliyoruz.
 ```
 1. Yöntem Kullanım
 
