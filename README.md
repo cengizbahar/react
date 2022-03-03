@@ -143,3 +143,18 @@ const inclued = meyveler.includes("portakal");
 console.log(inclued);
 ```
  
+## Koşullu Render ? = ise   : = else
+```
+const isLoggdIn = false;
+const name = "cengiz";
+const surname = "bahar";
+
+function app(){
+    return (
+        <div> 
+            {ìsLoggdIn ? `benim adım {name}, soyadım {surname}` :  `giriş yapmadınız` }
+        </div>
+    )
+}
+
+```
