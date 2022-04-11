@@ -208,4 +208,22 @@ function User({isLoggidIn , name , surname}) {
 export default User;
 
 ```
+## İMAGE EKLEME
+```
+SVG EKLEME
+import { ReactComponent as Logo } from './logo.svg';
 
+function App() {
+  return (
+    <div>
+    
+      <Logo />
+    </div>
+  );
+}
+
+İMG EKLEME 
+import logo from './logo.png';
+<img src={logo} alt="Logo" />
+
+```
